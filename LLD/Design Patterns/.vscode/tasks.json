@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile and run Java",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "-Command",
+        "copy \"${file}\" \"${workspaceFolder}\\TempJavaProgram.java\"; javac TempJavaProgram.java; java TempJavaProgram < input.txt > output.txt; del TempJavaProgram.class; del TempJavaProgram.java"
+      ],
+      "presentation": {
+        "reveal": "always"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "owner": "java",
+        "fileLocation": [
+          "relative",
+          "${workspaceRoot}"
+        ],
+        "pattern": {
+          "regexp": "^(.*\\.java):(\\d+):\\s+(error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "severity": 3,
+          "message": 4
+        }
+      }
+    }
+  ]
+}
