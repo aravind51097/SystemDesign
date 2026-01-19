@@ -10,7 +10,7 @@ public class OrderOutForDeliver implements IOrderState {
     @Override
     public void cancel(OrderContext context) {
         if (context.getCurrentStateName() == "OUT_FOR_DELIVERY") {
-            System.out.println("Oder cannot be cancelled , please return order ..");
+            System.out.println("Oder cannot be cancelled , please return during delivery ..");
         }
     }
 

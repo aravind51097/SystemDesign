@@ -26,7 +26,7 @@ public class Remote_Invoker {
         if (commandHistory.size() > 0) {
             commandHistory.pop().undo();
         } else {
-            System.out.println("No commands ");
+            System.out.println("No commands for Undo");
         }
     }
 
