@@ -1,8 +1,8 @@
 
-
 // =========== Component Interface ============
 interface Pizza {
     String getDescription();
+
     double getCost();
 }
 
@@ -31,10 +31,10 @@ class MargheritaPizza implements Pizza {
     }
 }
 
-
 // ======================== Abstract Decorator ===========================
 // ====== Implements Pizza and holds a reference to a Pizza object =======
 abstract class PizzaDecorator implements Pizza {
+    // referencing the parent interface
     protected Pizza pizza;
 
     public PizzaDecorator(Pizza pizza) {
@@ -45,6 +45,7 @@ abstract class PizzaDecorator implements Pizza {
 // ============ Concrete Decorator: Adds Extra Cheese ================
 class ExtraCheese extends PizzaDecorator {
     public ExtraCheese(Pizza pizza) {
+        // calling the parent constructor
         super(pizza);
     }
 
@@ -92,7 +93,6 @@ class StuffedCrust extends PizzaDecorator {
         return pizza.getCost() + 50.0;
     }
 }
-
 
 // Driver code
 public class Main {
