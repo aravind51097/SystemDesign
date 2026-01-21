@@ -28,7 +28,6 @@ public class BurgerMeal {
                 ", extraSpicy: " + extraSpicey);
     }
 
-
     public static class BurgerBuilder {
         private final String bunType;
         private final String patty;
