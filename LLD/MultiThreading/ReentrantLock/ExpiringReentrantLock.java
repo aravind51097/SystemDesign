@@ -17,6 +17,7 @@ class BookMovieTicket {
         if (isLockTaken) {
             isSeatBooked = true;
 
+            // this will executes after a delay of 1000 and release the thread lock
             executor.schedule(() -> {
                 if (lock.isHeldByCurrentThread()) {
                     System.out.println("Auto Releasing seat");
