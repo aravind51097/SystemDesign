@@ -5,8 +5,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-import Structural_Pattern.Facade.MovieTicketBookingfacade;
-
 class BookMovieTicket {
     private final ReentrantLock lock = new ReentrantLock();
     private final ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();

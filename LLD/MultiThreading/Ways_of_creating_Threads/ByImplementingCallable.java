@@ -2,7 +2,7 @@ package LLD.MultiThreading.Ways_of_creating_Threads;
 
 import java.util.concurrent.Callable;
 
-class waitAndGetTheValue implements Callable {
+class waitAndGetTheValue implements Callable<String> {
     private String str = null;
 
     @Override
@@ -20,9 +20,9 @@ class waitAndGetTheValue implements Callable {
 
 public class ByImplementingCallable {
     public static void main(String[] args) throws Exception {
-        Callable calling = new waitAndGetTheValue();
-        Callable calling2 = new waitAndGetTheValue();
-        
+        Callable<String> calling = new waitAndGetTheValue();
+        Callable<String> calling2 = new waitAndGetTheValue();
+
         System.out.println(calling.call());
         System.out.println(calling.call());
         System.out.println(calling2.call());
