@@ -77,12 +77,25 @@ public class Fail_Fast_and_Fail_Safe {
 
         FailFastProduct failFast = new FailFastProduct();
 
-        System.out.println(failFast.getProduct(null));
         failFast.addProduct(p1, p1.getProductId());
         failFast.addProduct(p2, p2.getProductId());
 
         try {
             System.out.println(failFast.getProduct(p3.getProductId()));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        // Fail safe
+        FailSafe failsafe = new FailSafe();
+
+        failsafe.addProduct(p1, p1.getProductName());
+        failsafe.addProduct(p3, p3.getProductName());
+
+        try {
+
+            System.out.println(failsafe.getProductName(p3.getProductId()));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
