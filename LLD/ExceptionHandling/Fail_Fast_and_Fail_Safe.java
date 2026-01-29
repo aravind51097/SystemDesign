@@ -51,6 +51,20 @@ class FailFastProduct {
 }
 
 class FailSafe {
+    private Map<String, Product> plist = new HashMap<>();
+
+    public String getProductName(String productId) {
+        try {
+            return plist.get(productId).getProductName();
+        } catch (Exception e) {
+            return "Dummpy Product";
+        }
+
+    }
+
+    public void addProduct(Product product, String pId) {
+        plist.put(pId, product);
+    }
 
 }
 
