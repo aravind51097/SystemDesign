@@ -24,11 +24,12 @@ class UKTaxCalculator implements TaxCalculator {
     }
 }
 
-// Using dependency Injection
+// Using dependency Injection this is closed for modification open for Extention
 class Invoice {
     private double amount;
     private TaxCalculator taxCalculator;
 
+    // Since we are using interface we can add N no of tax cal
     public Invoice(double amount, TaxCalculator taxCalculator) {
         this.amount = amount;
         this.taxCalculator = taxCalculator;
